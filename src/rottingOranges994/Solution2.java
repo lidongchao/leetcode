@@ -1,4 +1,4 @@
-package oranges.rotting994;
+package rottingOranges994;
 
 /**
  * 不用额外空间，不断扫描网格，每一轮都只关注好橘子和烂橘子的右方和下方

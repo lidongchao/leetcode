@@ -1,4 +1,4 @@
-package oranges.rotting994;
+package rottingOranges994;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
