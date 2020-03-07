@@ -1,7 +1,5 @@
 package rottingOranges994;
 
-import java.util.Arrays;
-
 public class Main {
     public static void main(String[] args) throws Exception {
         Solution3 solution = new Solution3();
@@ -20,12 +18,5 @@ public class Main {
 
         int[][] grid5 = {{1,0,0,0,2,1,0}};
         System.out.println(solution.orangesRotting(grid5));  // -1
-
-    }
-
-    public static void printArrays(int[][] arr) {
-        for (int[] a : arr) {
-            System.out.println(Arrays.toString(a));
-        }
     }
 }
