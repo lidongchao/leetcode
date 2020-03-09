@@ -4,7 +4,7 @@ import utils.ArrayUtils;
 
 public class Main {
     public static void main(String[] args) {
-        Solution3 solution = new Solution3();
+        Solution4 solution = new Solution4();
 
         // [2, 3, 4]
         // [4, 5]
