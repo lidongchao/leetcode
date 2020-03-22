@@ -15,6 +15,10 @@ public final class AssertUtils {
         assertEquals(expect, actual);
     }
 
+    public static void assertEqualsBoolean(Boolean expect, Boolean actual) {
+        assertEquals(expect, actual);
+    }
+
     public static void assertEqualsStringArray(String[] expect, String[] actual) {
         assertEqualsArray(expect, actual);
     }
@@ -27,7 +31,22 @@ public final class AssertUtils {
         assertEqualsArray(ArrayUtils.toObject(expect), ArrayUtils.toObject(actual));
     }
 
+    public static void assertEqualsIntArrayIgnorePosition(int[] expect, int[] actual) {
+        assertEqualsArrayIgnorePosition(ArrayUtils.toObject(expect), ArrayUtils.toObject(actual));
+    }
+
     public static void assertEqualsArray(Object[] expect, Object[] actual) {
+        if (Arrays.equals(expect, actual)) {
+            System.out.println(PASS);
+        } else {
+            printlnExpect(Arrays.toString(expect));
+            printlnActual(Arrays.toString(actual));
+        }
+    }
+
+    public static void assertEqualsArrayIgnorePosition(Object[] expect, Object[] actual) {
+        Arrays.sort(expect);
+        Arrays.sort(actual);
         if (Arrays.equals(expect, actual)) {
             System.out.println(PASS);
         } else {
