@@ -1,4 +1,4 @@
-package compressStringLcci;
+package compressStringLcci01_06;
 
 /**
  * 思路 1：遍历每个字符，记录每个字符连续的次数，遇到不同的字符则触发压缩

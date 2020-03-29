@@ -1,4 +1,4 @@
-package topKDesc;
+package topKDesc40;
 
 /**
  * 思路 5：快排算法实现 topN

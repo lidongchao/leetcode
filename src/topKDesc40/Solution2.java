@@ -1,4 +1,4 @@
-package topKDesc;
+package topKDesc40;
 
 /**
  * 思路 2：注意到 arr 数组的每一个元素都不超过 10000，所以直接上计数排序。

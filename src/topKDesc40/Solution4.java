@@ -1,4 +1,4 @@
-package topKDesc;
+package topKDesc40;
 
 /**
  * 思路 4：堆排序，用大顶堆保存最小的 k 个数，其中堆顶元素是这 k 个数中最大的。

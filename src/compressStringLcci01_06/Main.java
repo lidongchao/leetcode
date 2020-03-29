@@ -1,4 +1,4 @@
-package compressStringLcci;
+package compressStringLcci01_06;
 
 import utils.AssertUtils;
 

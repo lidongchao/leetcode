@@ -1,4 +1,4 @@
-package BestTimeToBuyAndSellStock121;
+package bestTimeToBuyAndSellStock121;
 
 /**
  * 思路 1：维护一个最大价格差的区间，区间初始化为第一天买入，第一天卖出，利润为 0

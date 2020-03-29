@@ -1,4 +1,4 @@
-package BestTimeToBuyAndSellStock121;
+package bestTimeToBuyAndSellStock121;
 
 /**
  * 思路 2：不再维护数组，而是从第一天开始遍历，只维护从第一天到当天的最低价，然后判断以最低价买入，当天价格卖出得到的利润是不是更大

@@ -1,4 +1,4 @@
-package BestTimeToBuyAndSellStock121;
+package bestTimeToBuyAndSellStock121;
 
 import utils.AssertUtils;
 
