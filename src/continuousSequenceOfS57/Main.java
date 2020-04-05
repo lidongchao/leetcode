@@ -8,12 +8,12 @@ public class Main {
 
         // [2, 3, 4]
         // [4, 5]
-        ArrayUtils.print2DimArray(solution.findContinuousSequence(9));
+        System.out.println(ArrayUtils.toStringInt2DArray(solution.findContinuousSequence(9)));
 
         // [1, 2, 3, 4, 5]
         // [4, 5, 6]
         // [7, 8]
-        ArrayUtils.print2DimArray(solution.findContinuousSequence(15));
+        System.out.println(ArrayUtils.toStringInt2DArray(solution.findContinuousSequence(15)));
 
         // [36 , ... , 444]
         // [534, ... , 693]
@@ -22,6 +22,6 @@ public class Main {
         // [6537, ... , 6551]
         // [19630, 19631, 19632, 19633, 19634]
         // [32719, 32720, 32721]
-        ArrayUtils.print2DimArray(solution.findContinuousSequence(98160));
+        System.out.println(ArrayUtils.toStringInt2DArray(solution.findContinuousSequence(98160)));
     }
 }

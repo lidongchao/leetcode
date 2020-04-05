@@ -35,6 +35,10 @@ public final class AssertUtils {
         assertEqualsArrayIgnorePosition(ArrayUtils.toObject(expect), ArrayUtils.toObject(actual));
     }
 
+    public static void assertEqualsInt2DArray(int[][] expect, int[][] actual) {
+        assertEquals2DArray(ArrayUtils.to2DObject(expect), ArrayUtils.to2DObject(actual));
+    }
+
     public static void assertEqualsArray(Object[] expect, Object[] actual) {
         if (Arrays.equals(expect, actual)) {
             System.out.println(PASS);
@@ -55,6 +59,29 @@ public final class AssertUtils {
         }
     }
 
+    public static void assertEquals2DArray(Object[][] expect, Object[][] actual) {
+        boolean equals = false;
+        if (expect.length == actual.length) {
+            if (expect.length == 0) {
+                equals = true;
+            } else {
+                if (expect[0].length == actual[0].length) {
+                    equals = true;
+                    for (int i = 0; i < expect[0].length; i++) {
+                        equals &= Arrays.equals(expect[i], actual[i]);
+                    }
+                }
+            }
+        }
+
+        if (equals) {
+            System.out.println(PASS);
+        } else {
+            printlnExpect(ArrayUtils.toString2DArray(expect), true);
+            printlnActual(ArrayUtils.toString2DArray(actual), true);
+        }
+    }
+
     public static void assertEquals(Object expect, Object actual) {
         if (expect.equals(actual)) {
             System.out.println(PASS);
@@ -64,11 +91,29 @@ public final class AssertUtils {
         }
     }
 
+    private static void printlnExpect(Object o, boolean startWithNewLine) {
+        if (startWithNewLine) {
+            System.out.println("Expect:");
+            System.out.println(o);
+        } else {
+            System.out.println("Expect:" + o);
+        }
+    }
+
     private static void printlnExpect(Object o) {
-        System.out.println("Expect:" + o);
+        printlnExpect(o, false);
+    }
+
+    private static void printlnActual(Object o, boolean startWithNewLine) {
+        if (startWithNewLine) {
+            System.out.println("Actual:");
+            System.out.println(o);
+        } else {
+            System.out.println("Actual:" + o);
+        }
     }
 
     private static void printlnActual(Object o) {
-        System.out.println("Actual:" + o);
+        printlnActual(o, false);
     }
 }
