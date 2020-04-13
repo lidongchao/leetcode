@@ -42,7 +42,7 @@ class LFUCache2 {
         }
         else {
             // key 的访问次数加一
-            util.update(dataNode);
+            util.plusOneOnDataNodeFreq(dataNode);
             // 返回缓存值
             return dataNode.value;
         }
@@ -56,18 +56,18 @@ class LFUCache2 {
             // 更新 value
             dataNode.value = value;
             // key 的访问次数加一
-            util.update(dataNode);
+            util.plusOneOnDataNodeFreq(dataNode);
             return;
         }
         // 缓存已满，需要移除访问次数最少且最不经常使用的记录
         if (capacity == keyMap.size()) {
-            final DataNode remove = util.remove();
+            final DataNode remove = util.removeDataNode();
             keyMap.remove(remove.key);
         }
         // 更新 keyMap，在双向列表中维护访问次数
         final DataNode newDataNode = new DataNode(key, value);
         keyMap.put(key, newDataNode);
-        util.add(newDataNode);
+        util.addDataNode(newDataNode);
     }
 
 
@@ -124,7 +124,7 @@ class LFUCache2 {
         }
 
         // 将数据结点的访问次数加一，同时将该数据结点从当前的次数结点移动到下一个次数结点上
-        void update(DataNode dataNode) {
+        void plusOneOnDataNodeFreq(DataNode dataNode) {
             // 获取该数据结点对应的次数结点
             final FreqNode current = dataNode.freqNode;
             // 如果次数结点的下一个结点不是当前次数加一的关系，就需要新增一个结点
@@ -133,15 +133,15 @@ class LFUCache2 {
             }
 
             // 移除数据结点
-            remove(dataNode);
+            removeDataNode(dataNode);
             // 数据结点的访问次数加一
             dataNode.freq++;
             // 将数据结点添加到新的次数结点的链表上
-            add(current.post, dataNode);
+            addDataNode(current.post, dataNode);
         }
 
         // 数据结点添加到次数结点的链表上
-        void add(FreqNode list, DataNode dataNode) {
+        void addDataNode(FreqNode list, DataNode dataNode) {
             // 头插法
             dataNode.post = list.head.post;
             dataNode.prev = list.head;
@@ -152,20 +152,16 @@ class LFUCache2 {
         }
 
         // 数据结点添加到次数为 1 的次数结点的链表上
-        void add(DataNode dataNode) {
+        void addDataNode(DataNode dataNode) {
             // 保证存在次数为 1 的次数结点
             if (head.post.freq != 1) {
-                final FreqNode newList = new FreqNode(1);
-                newList.prev = head;
-                newList.post = head.post;
-                newList.prev.post = newList;
-                newList.post.prev = newList;
+                addFreqNode(head, 1);
             }
-            add(head.post, dataNode);
+            addDataNode(head.post, dataNode);
         }
 
         // 移除数据结点
-        void remove(DataNode dataNode) {
+        void removeDataNode(DataNode dataNode) {
             // 将数据结点从次数结点的链表上移除
             dataNode.prev.post = dataNode.post;
             dataNode.post.prev = dataNode.prev;
@@ -177,10 +173,10 @@ class LFUCache2 {
         }
 
         // 移除最久最少访问的数据结点
-        DataNode remove() {
+        DataNode removeDataNode() {
             // 该结点位于第一个次数结点 (head.post) 的尾部 (tail.prev)
             final DataNode last = head.post.tail.prev;
-            remove(last);
+            removeDataNode(last);
             return last;
         }
 

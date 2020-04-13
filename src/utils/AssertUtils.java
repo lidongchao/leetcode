@@ -7,6 +7,8 @@ public final class AssertUtils {
 
     private static final String PASS = "Pass";
 
+    /****************** basic ******************/
+
     public static void assertEqualsString(String expect, String actual) {
         assertEquals(expect, actual);
     }
@@ -18,6 +20,17 @@ public final class AssertUtils {
     public static void assertEqualsBoolean(Boolean expect, Boolean actual) {
         assertEquals(expect, actual);
     }
+
+    public static void assertEquals(Object expect, Object actual) {
+        if (expect.equals(actual)) {
+            System.out.println(PASS);
+        } else {
+            printlnExpect(expect);
+            printlnActual(actual);
+        }
+    }
+
+    /****************** array ******************/
 
     public static void assertEqualsStringArray(String[] expect, String[] actual) {
         assertEqualsArray(expect, actual);
@@ -35,8 +48,12 @@ public final class AssertUtils {
         assertEqualsArrayIgnorePosition(ArrayUtils.toObject(expect), ArrayUtils.toObject(actual));
     }
 
-    public static void assertEqualsInt2DArray(int[][] expect, int[][] actual) {
-        assertEquals2DArray(ArrayUtils.to2DObject(expect), ArrayUtils.to2DObject(actual));
+    public static void assertEqualsDoubleArray(Double[] expect, Double[] actual) {
+        assertEqualsArray(expect, actual);
+    }
+
+    public static void assertEqualsDoubleArray(double[] expect, double[] actual) {
+        assertEqualsArray(ArrayUtils.toObject(expect), ArrayUtils.toObject(actual));
     }
 
     public static void assertEqualsArray(Object[] expect, Object[] actual) {
@@ -57,6 +74,12 @@ public final class AssertUtils {
             printlnExpect(Arrays.toString(expect));
             printlnActual(Arrays.toString(actual));
         }
+    }
+
+    /****************** 2d array ******************/
+
+    public static void assertEqualsInt2DArray(int[][] expect, int[][] actual) {
+        assertEquals2DArray(ArrayUtils.to2DObject(expect), ArrayUtils.to2DObject(actual));
     }
 
     public static void assertEquals2DArray(Object[][] expect, Object[][] actual) {
@@ -82,14 +105,7 @@ public final class AssertUtils {
         }
     }
 
-    public static void assertEquals(Object expect, Object actual) {
-        if (expect.equals(actual)) {
-            System.out.println(PASS);
-        } else {
-            printlnExpect(expect);
-            printlnActual(actual);
-        }
-    }
+    /****************** print ******************/
 
     private static void printlnExpect(Object o, boolean startWithNewLine) {
         if (startWithNewLine) {
