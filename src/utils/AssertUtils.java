@@ -90,7 +90,7 @@ public final class AssertUtils {
             } else {
                 if (expect[0].length == actual[0].length) {
                     equals = true;
-                    for (int i = 0; i < expect[0].length; i++) {
+                    for (int i = 0; i < expect.length; i++) {
                         equals &= Arrays.equals(expect[i], actual[i]);
                     }
                 }
