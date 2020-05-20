@@ -21,6 +21,15 @@ public final class AssertUtils {
         assertEquals(expect, actual);
     }
 
+    public static void assertEqualsDouble(Double expect, Double actual) {
+        if (expect - actual < Double.MIN_VALUE) {
+            System.out.println(PASS);
+        } else {
+            printlnExpect(expect);
+            printlnActual(actual);
+        }
+    }
+
     public static void assertEquals(Object expect, Object actual) {
         if (expect.equals(actual)) {
             System.out.println(PASS);
@@ -46,6 +55,10 @@ public final class AssertUtils {
 
     public static void assertEqualsIntArrayIgnorePosition(int[] expect, int[] actual) {
         assertEqualsArrayIgnorePosition(ArrayUtils.toObject(expect), ArrayUtils.toObject(actual));
+    }
+
+    public static void assertEqualsIntArrayAnyCase(int[][] expect, int[] actual) {
+        assertEqualsArrayAnyCase(ArrayUtils.to2DObject(expect), ArrayUtils.toObject(actual));
     }
 
     public static void assertEqualsDoubleArray(Double[] expect, Double[] actual) {
@@ -74,6 +87,17 @@ public final class AssertUtils {
             printlnExpect(Arrays.toString(expect));
             printlnActual(Arrays.toString(actual));
         }
+    }
+
+    public static void assertEqualsArrayAnyCase(Object[][] expect, Object[] actual) {
+        for (Object[] e: expect) {
+            if (Arrays.equals(e, actual)) {
+                System.out.println(PASS);
+                return;
+            }
+        }
+        printlnExpect(Arrays.toString(expect));
+        printlnActual(Arrays.toString(actual));
     }
 
     /****************** 2d array ******************/
