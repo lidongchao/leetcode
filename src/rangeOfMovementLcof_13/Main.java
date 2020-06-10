@@ -1,4 +1,4 @@
-package RangeOfMovementLcof_13;
+package rangeOfMovementLcof_13;
 
 import utils.AssertUtils;
 

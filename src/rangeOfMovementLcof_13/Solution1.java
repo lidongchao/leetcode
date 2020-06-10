@@ -1,4 +1,4 @@
-package RangeOfMovementLcof_13;
+package rangeOfMovementLcof_13;
 
 /**
  * 思路 1：暴力 + 剪枝
