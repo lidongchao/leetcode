@@ -1,5 +1,7 @@
 package middleOfTheLinkedList876;
 
+import utils.ListNode;
+
 /**
  * 思路 1：快慢指针，慢指针一次走一步，快指针一次走两步，当快指针指向最后一个结点或者指向 null 的时候，慢指针指向的结点就是中间结点。
  *
@@ -23,7 +25,7 @@ class Solution1 {
      * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
      *
      * @param head 头结点
-     * @return
+     * @return 链表的中间结点
      */
     public ListNode middleNode(ListNode head) {
         if (null == head || null == head.next) return head;

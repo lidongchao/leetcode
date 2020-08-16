@@ -1,5 +1,11 @@
 package utils;
 
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+import serializeAndDeserializeBinaryTree297.Codec;
+
 public class TreeNode {
     public int val;
     public TreeNode left;
@@ -20,4 +26,15 @@ public class TreeNode {
                 ", " + right +
                 "]}";
     }
+
+    public String serialize() {
+        Codec codec = new Codec();
+        return codec.serialize(this);
+    }
+
+    public static TreeNode deserialize(String s) {
+        Codec codec = new Codec();
+        return codec.deserialize(s);
+    }
+
 }

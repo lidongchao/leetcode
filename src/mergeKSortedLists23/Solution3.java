@@ -1,5 +1,7 @@
 package mergeKSortedLists23;
 
+import utils.ListNode;
+
 /**
  * 思路 3：分治，两两合并
  *

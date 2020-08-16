@@ -1,6 +1,9 @@
 package utils;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Stream;
 
 public class ArrayUtils {
     /**
@@ -73,11 +76,7 @@ public class ArrayUtils {
         } else if (array.length == 0) {
             return EMPTY_INT_ARRAY;
         }
-        final int[] result = new int[array.length];
-        for (int i = 0; i < array.length; i++) {
-            result[i] = array[i];
-        }
-        return result;
+        return Arrays.stream(array).mapToInt(Integer::intValue).toArray();
      }
 
     public static Integer[] toObject(final int[] array) {
@@ -86,11 +85,7 @@ public class ArrayUtils {
         } else if (array.length == 0) {
             return EMPTY_INTEGER_ARRAY;
         }
-        final Integer[] result = new Integer[array.length];
-        for (int i = 0; i < array.length; i++) {
-            result[i] = array[i];
-        }
-        return result;
+        return Arrays.stream(array).boxed().toArray(Integer[]::new);
     }
 
     public static int[][] to2DPrimitive(final Integer[][] array) {
@@ -114,13 +109,16 @@ public class ArrayUtils {
         } else if (array.length == 0 || array[0].length == 0) {
             return EMPTY_INTEGER_2D_ARRAY;
         }
-        final Integer[][] result = new Integer[array.length][array[0].length];
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[0].length; j++) {
-                result[i][j] = array[i][j];
-            }
+        return Stream.of(array).map(ArrayUtils::toObject).toArray(Integer[][]::new);
+    }
+
+    public static Integer[][] toObject(final List<List<Integer>> listForList) {
+        if (listForList == null) {
+            return null;
+        } else if (listForList.size() == 0) {
+            return EMPTY_INTEGER_2D_ARRAY;
         }
-        return result;
+        return listForList.stream().map(x -> x.toArray(new Integer[0])).toArray(Integer[][]::new);
     }
 
     private static final int[] EMPTY_INT_ARRAY = new int[0];
@@ -136,13 +134,47 @@ public class ArrayUtils {
         } else if (array.length == 0) {
             return EMPTY_DOUBLE_ARRAY;
         }
-        final Double[] result = new Double[array.length];
+        return Arrays.stream(array).boxed().toArray(Double[]::new);
+    }
+
+    private static final double[] EMPTY_PRIMITIVE_DOUBLE_ARRAY = new double[0];
+    private static final Double[] EMPTY_DOUBLE_ARRAY = new Double[0];
+
+    /****************** char 数组转换方法 ******************/
+
+    public static Character[] toObject(final char[] array) {
+        if (array == null) {
+            return null;
+        } else if (array.length == 0) {
+            return EMPTY_CHARACTER_ARRAY;
+        }
+        final Character[] result = new Character[array.length];
         for (int i = 0; i < array.length; i++) {
             result[i] = array[i];
         }
         return result;
     }
 
-    private static final double[] EMPTY_PRIMITIVE_DOUBLE_ARRAY = new double[0];
-    private static final Double[] EMPTY_DOUBLE_ARRAY = new Double[0];
+    public static Character[][] to2DObject(final char[][] array) {
+        if (array == null) {
+            return null;
+        } else if (array.length == 0 || array[0].length == 0) {
+            return EMPTY_CHARACTER_2D_ARRAY;
+        }
+        return Stream.of(array).map(ArrayUtils::toObject).toArray(Character[][]::new);
+    }
+
+    private static final Character[] EMPTY_CHARACTER_ARRAY = new Character[0];
+    private static final Character[][] EMPTY_CHARACTER_2D_ARRAY = new Character[0][];
+
+
+    /****************** main ******************/
+
+    public static void main(String[] args) {
+        double[] doubleOrigin = new double[]{1.1, 1.2, 1.3, 1.4};
+        Double[] doubleBoxed = toObject(doubleOrigin);
+        Double[] doubleExpect = new Double[]{1.1, 1.2, 1.3, 1.4};
+        AssertUtils.assertEqualsArray(doubleExpect, doubleBoxed);
+
+    }
 }

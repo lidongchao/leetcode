@@ -1,5 +1,7 @@
 package mergeKSortedLists23;
 
+import utils.ListNode;
+
 /**
  * 思路 1：每次遍历 k 个排序链表的第一个元素，得到最小结点加入新链表，最小结点所在链表同时移除该结点。直到所有排序链表为空。
  *

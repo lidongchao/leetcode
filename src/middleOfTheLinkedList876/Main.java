@@ -1,6 +1,7 @@
 package middleOfTheLinkedList876;
 
 import utils.AssertUtils;
+import utils.ListNode;
 
 public class Main {
     public static void main(String[] args) {

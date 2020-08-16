@@ -1,6 +1,8 @@
 package mergeKSortedLists23;
 
+import java.util.Comparator;
 import java.util.PriorityQueue;
+import utils.ListNode;
 
 /**
  * 思路 2：优先队列维护每个链表的最小结点
@@ -35,7 +37,7 @@ class Solution2 {
         ListNode p = head;
 
         // 优先队列维护每个链表的最小结点
-        PriorityQueue<ListNode> queue = new PriorityQueue<>(((o1, o2) -> o1.val - o2.val));
+        PriorityQueue<ListNode> queue = new PriorityQueue<>((Comparator.comparingInt(o -> o.val)));
 
         // 初始化
         for (ListNode node : lists) {

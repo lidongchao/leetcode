@@ -41,14 +41,17 @@ class Solution {
 
         // x 和 y 一个必然进入到 xor1 分支，另一个必然进入到 xor2 分支，剩余成对出现的数字同样会成对进入 xor1 或 xor2
         // 最终 xor1 和 xor2 就是 x 和 y
-        int xor1 = 0, xor2 = 0;
+        // 进一步优化，只需要计算 xor1，因为 xor1 ^ xor2 = xor，xor2 = xor ^ xor1
+        int xor1 = 0;
+//        int xor2 = 0;
         for (int n : nums) {
             if ((n & firstOne) == 0) {
                 xor1 ^= n;
-            } else {
-                xor2 ^= n;
             }
+//            else {
+//                xor2 ^= n;
+//            }
         }
-        return new int[]{xor1, xor2};
+        return new int[]{xor1, xor ^ xor1};
     }
 }
