@@ -11,7 +11,7 @@ public class Main {
         Solution solution = new Solution();
         Node clonedGraph = solution.cloneGraph(convertMatrixToGraph(expect));
         int[][] actual = convertGraphToMatrix(clonedGraph);
-        AssertUtils.assertEqualsInt2DArray(expect, actual);
+        AssertUtils.assertEquals2DArray(expect, actual);
 
     }
 

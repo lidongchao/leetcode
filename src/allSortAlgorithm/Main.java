@@ -27,18 +27,18 @@ public class Main {
 
         int[] arr_1 = {4,2,6,3,5,1};
         int[] expect_1 = {1,2,3,4,5,6};
-        AssertUtils.assertEqualsIntArray(expect_1, algorithm.sort(arr_1));
+        AssertUtils.assertEqualsArray(expect_1, algorithm.sort(arr_1));
 
         int[] arr_2 = {1,2,3,4,5,6};
         int[] expect_2 = {1,2,3,4,5,6};
-        AssertUtils.assertEqualsIntArray(expect_2, algorithm.sort(arr_2));
+        AssertUtils.assertEqualsArray(expect_2, algorithm.sort(arr_2));
 
         int[] arr_3 = {6,5,4,3,2,1};
         int[] expect_3 = {1,2,3,4,5,6};
-        AssertUtils.assertEqualsIntArray(expect_3, algorithm.sort(arr_3));
+        AssertUtils.assertEqualsArray(expect_3, algorithm.sort(arr_3));
 
         int[] arr_4 = {0};
         int[] expect_4 = {0};
-        AssertUtils.assertEqualsIntArray(expect_4, algorithm.sort(arr_4));
+        AssertUtils.assertEqualsArray(expect_4, algorithm.sort(arr_4));
     }
 }

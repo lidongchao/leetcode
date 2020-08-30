@@ -1,6 +1,6 @@
 package utils;
 
-import java.util.Random;
+import java.util.*;
 
 public class GeneratorUtils {
 
@@ -30,14 +30,14 @@ public class GeneratorUtils {
         return matrix;
     }
 
-    public static TreeNode generateTree(int height, int ratioToFork, int minValue, int maxValue) {
+    public static TreeNode generateRandomTree(int height, int ratioToFork, int minValue, int maxValue) {
         if (height <= 0) return null;
         TreeNode root = new TreeNode(randomValue(minValue, maxValue));
         if (random.nextInt(100) < ratioToFork) {
-            root.left = generateTree(height - 1, ratioToFork, minValue, maxValue);
+            root.left = generateRandomTree(height - 1, ratioToFork, minValue, maxValue);
         }
         if (random.nextInt(100) < ratioToFork) {
-            root.right = generateTree(height - 1, ratioToFork, minValue, maxValue);
+            root.right = generateRandomTree(height - 1, ratioToFork, minValue, maxValue);
         }
         return root;
     }

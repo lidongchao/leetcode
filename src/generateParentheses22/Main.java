@@ -8,6 +8,6 @@ public class Main {
 
         int n_1 = 3;
         int expect_1 = 5;
-        AssertUtils.assertEqualsInteger(expect_1, solution.generateParenthesis(n_1).size());
+        AssertUtils.assertEquals(expect_1, solution.generateParenthesis(n_1).size());
     }
 }

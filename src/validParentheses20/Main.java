@@ -6,11 +6,11 @@ public class Main {
     public static void main(String[] args) {
         Solution solution = new Solution();
 
-        AssertUtils.assertEqualsBoolean(true, solution.isValid("()"));
-        AssertUtils.assertEqualsBoolean(true, solution.isValid("()[]{}"));
-        AssertUtils.assertEqualsBoolean(false, solution.isValid("(]"));
-        AssertUtils.assertEqualsBoolean(false, solution.isValid("([)]"));
-        AssertUtils.assertEqualsBoolean(true, solution.isValid("{[]}"));
+        AssertUtils.assertEquals(true, solution.isValid("()"));
+        AssertUtils.assertEquals(true, solution.isValid("()[]{}"));
+        AssertUtils.assertEquals(false, solution.isValid("(]"));
+        AssertUtils.assertEquals(false, solution.isValid("([)]"));
+        AssertUtils.assertEquals(true, solution.isValid("{[]}"));
 
     }
 }

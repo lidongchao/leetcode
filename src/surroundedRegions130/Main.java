@@ -21,7 +21,7 @@ public class Main {
         };
 
         solution.solve(board);
-        AssertUtils.assertEquals2DArray(ArrayUtils.to2DObject(expect), ArrayUtils.to2DObject(board));
+        AssertUtils.assertEquals2DArray(ArrayUtils.primitiveTo2DObject(expect), ArrayUtils.primitiveTo2DObject(board));
 
     }
 }

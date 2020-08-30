@@ -20,10 +20,10 @@ public class Main {
 
         // 7807
         ListNode ans1 = solution.addTwoNumbers(l1, l2);
-        AssertUtils.assertEqualsInteger(7, ans1.val);
-        AssertUtils.assertEqualsInteger(8, ans1.next.val);
-        AssertUtils.assertEqualsInteger(0, ans1.next.next.val);
-        AssertUtils.assertEqualsInteger(7, ans1.next.next.next.val);
+        AssertUtils.assertEquals(7, ans1.val);
+        AssertUtils.assertEquals(8, ans1.next.val);
+        AssertUtils.assertEquals(0, ans1.next.next.val);
+        AssertUtils.assertEquals(7, ans1.next.next.next.val);
 
     }
 }

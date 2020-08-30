@@ -8,22 +8,22 @@ public class Main {
 
         int[][] grid_1 = {{2,1,1},{1,1,0},{0,1,1}};
         int expect_1 = 4;
-        AssertUtils.assertEqualsInteger(expect_1, solution.orangesRotting(grid_1));
+        AssertUtils.assertEquals(expect_1, solution.orangesRotting(grid_1));
 
         int[][] grid_2 = {{2,1,1},{0,1,1},{1,0,1}};
         int expect_2 = -1;
-        AssertUtils.assertEqualsInteger(expect_2, solution.orangesRotting(grid_2));
+        AssertUtils.assertEquals(expect_2, solution.orangesRotting(grid_2));
 
         int[][] grid_3 = {{0,2}};
         int expect_3 = 0;
-        AssertUtils.assertEqualsInteger(expect_3, solution.orangesRotting(grid_3));
+        AssertUtils.assertEquals(expect_3, solution.orangesRotting(grid_3));
 
         int[][] grid_4 = {{0,0,1,2},{2,0,1,1}};
         int expect_4 = 2;
-        AssertUtils.assertEqualsInteger(expect_4, solution.orangesRotting(grid_4));
+        AssertUtils.assertEquals(expect_4, solution.orangesRotting(grid_4));
 
         int[][] grid_5 = {{1,0,0,0,2,1,0}};
         int expect_5 = -1;
-        AssertUtils.assertEqualsInteger(expect_5, solution.orangesRotting(grid_5));
+        AssertUtils.assertEquals(expect_5, solution.orangesRotting(grid_5));
     }
 }

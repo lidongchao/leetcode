@@ -12,8 +12,8 @@ public class Main {
         for (int i = 0; i < 100; i++) {
             int[] arr = GeneratorUtils.generateRandomArray(1, 1000, -1000, 1000);
             AssertUtils.assertEquals2DArray(
-                    ArrayUtils.toObject(solution1.threeSum(arr)),
-                    ArrayUtils.toObject(solution2.threeSum(arr)));
+                    ArrayUtils.listTo2DIntArray(solution1.threeSum(arr)),
+                    ArrayUtils.listTo2DIntArray(solution2.threeSum(arr)));
 
         }
     }

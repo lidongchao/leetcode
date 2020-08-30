@@ -12,7 +12,7 @@ public class Main {
         for (int i = 0; i < inputs.length; i++) {
             outputs[i] = solution.integerBreak(inputs[i]);
         }
-        AssertUtils.assertEqualsIntArray(expects, outputs);
+        AssertUtils.assertEqualsArray(expects, outputs);
 
     }
 }

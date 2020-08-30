@@ -8,6 +8,6 @@ public class Main {
 
         int[] height_1 = {1,8,6,2,5,4,8,3,7};
         int expect_1 = 49;
-        AssertUtils.assertEqualsInteger(expect_1, solution.maxArea(height_1));
+        AssertUtils.assertEquals(expect_1, solution.maxArea(height_1));
     }
 }

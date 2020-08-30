@@ -16,11 +16,11 @@ public class Main {
         //   /  \
         //  15   7
         TreeNode root = solution.buildTree(preorder, inorder);
-        AssertUtils.assertEqualsInteger(3, root.val);
-        AssertUtils.assertEqualsInteger(9, root.left.val);
-        AssertUtils.assertEqualsInteger(20, root.right.val);
-        AssertUtils.assertEqualsInteger(15, root.right.left.val);
-        AssertUtils.assertEqualsInteger(7, root.right.right.val);
+        AssertUtils.assertEquals(3, root.val);
+        AssertUtils.assertEquals(9, root.left.val);
+        AssertUtils.assertEquals(20, root.right.val);
+        AssertUtils.assertEquals(15, root.right.left.val);
+        AssertUtils.assertEquals(7, root.right.right.val);
 
     }
 }

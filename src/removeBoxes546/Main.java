@@ -13,7 +13,7 @@ public class Main {
 
         for (int i = 0; i < 1000; i++) {
             int[] boxes = GeneratorUtils.generateRandomArray(1, 100, 1, 100);
-            if (!AssertUtils.assertEqualsInteger(answer.removeBoxes(boxes), solution.removeBoxes(boxes))) {
+            if (!AssertUtils.assertEquals(answer.removeBoxes(boxes), solution.removeBoxes(boxes))) {
                 System.out.println(Arrays.toString(boxes));
             }
         }

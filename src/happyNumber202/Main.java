@@ -8,7 +8,7 @@ public class Main {
 
         int n = 19;
         boolean expect = true;
-        AssertUtils.assertEqualsBoolean(expect, solution.isHappy(n));
+        AssertUtils.assertEquals(expect, solution.isHappy(n));
 
     }
 }

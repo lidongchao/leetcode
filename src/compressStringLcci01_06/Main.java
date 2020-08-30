@@ -8,11 +8,11 @@ public class Main {
 
         String s_1 = "aabcccccaaa";
         String expect_1 = "a2b1c5a3";
-        AssertUtils.assertEqualsString(expect_1, solution.compressString(s_1));
+        AssertUtils.assertEquals(expect_1, solution.compressString(s_1));
 
         String s_2 = "abbccd";
         String expect_2 = "abbccd";  // abbccd < a1b2c2d1
-        AssertUtils.assertEqualsString(expect_2, solution.compressString(s_2));
+        AssertUtils.assertEquals(expect_2, solution.compressString(s_2));
 
     }
 }

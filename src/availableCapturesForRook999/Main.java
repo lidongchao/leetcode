@@ -16,7 +16,7 @@ public class Main {
                 {'.','.','.','.','.','.','.','.'},
                 {'.','.','.','.','.','.','.','.'}};
         int expect_1 = 3;
-        AssertUtils.assertEqualsInteger(expect_1, solution.numRookCaptures(board_1));
+        AssertUtils.assertEquals(expect_1, solution.numRookCaptures(board_1));
 
         char[][] board_2 = {
                 {'.','.','.','.','.','.','.','.'},
@@ -28,7 +28,7 @@ public class Main {
                 {'.','.','.','.','.','.','.','.'},
                 {'.','.','.','.','.','.','.','.'}};
         int expect_2 = 0;
-        AssertUtils.assertEqualsInteger(expect_2, solution.numRookCaptures(board_2));
+        AssertUtils.assertEquals(expect_2, solution.numRookCaptures(board_2));
 
         char[][] board_3 = {
                 {'.','.','.','.','.','.','.','.'},
@@ -40,7 +40,7 @@ public class Main {
                 {'.','.','.','p','.','.','.','.'},
                 {'.','.','.','.','.','.','.','.'}};
         int expect_3 = 3;
-        AssertUtils.assertEqualsInteger(expect_3, solution.numRookCaptures(board_3));
+        AssertUtils.assertEquals(expect_3, solution.numRookCaptures(board_3));
 
     }
 }

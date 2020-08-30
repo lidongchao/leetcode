@@ -17,7 +17,7 @@ public class Main {
                 {9,6,3}
         };
         solution.rotate(matrix_1);
-        AssertUtils.assertEqualsInt2DArray(expect_1, matrix_1);
+        AssertUtils.assertEquals2DArray(expect_1, matrix_1);
 
         int[][] matrix_2 = {
                 { 5, 1, 9,11},
@@ -32,7 +32,7 @@ public class Main {
                 {16, 7,10,11}
         };
         solution.rotate(matrix_2);
-        AssertUtils.assertEqualsInt2DArray(expect_2, matrix_2);
+        AssertUtils.assertEquals2DArray(expect_2, matrix_2);
 
     }
 }

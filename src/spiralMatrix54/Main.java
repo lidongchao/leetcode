@@ -28,7 +28,7 @@ public class Main {
                 {1, 2, 3, 4, 5, 6, 7, 8, 9, 10 },
         };
         int[] expect_3 = {1,2,3,4,5,6,7,8,9,10};
-        AssertUtils.assertEqualsIntArray(expect_3,
+        AssertUtils.assertEqualsArray(expect_3,
                 solution.spiralOrder(matrix_3).stream().mapToInt(Integer::intValue).toArray());
     }
 }

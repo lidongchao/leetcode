@@ -10,7 +10,7 @@ public class Main {
         int target_1 = 9;
         int[] expect_1 = {0,1};
 
-        AssertUtils.assertEqualsIntArray(expect_1, solution.twoSum(nums_1, target_1));
+        AssertUtils.assertEqualsArray(expect_1, solution.twoSum(nums_1, target_1));
 
     }
 }

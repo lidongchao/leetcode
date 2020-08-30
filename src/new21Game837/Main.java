@@ -10,7 +10,7 @@ public class Main {
         int         K_1 = 1;
         int         W_1 = 10;
         double expect_1 = 1.0;
-        AssertUtils.assertEqualsDouble(
+        AssertUtils.assertEquals(
                 expect_1,
                 solution.new21Game(
                         N_1,
@@ -23,7 +23,7 @@ public class Main {
         int         K_2 = 1;
         int         W_2 = 10;
         double expect_2 = 0.6;
-        AssertUtils.assertEqualsDouble(
+        AssertUtils.assertEquals(
                 expect_2,
                 solution.new21Game(
                         N_2,
@@ -36,7 +36,7 @@ public class Main {
         int         K_3 = 1;
         int         W_3 = 10;
         double expect_3 = 1.0;
-        AssertUtils.assertEqualsDouble(
+        AssertUtils.assertEquals(
                 expect_3,
                 solution.new21Game(
                         N_3,

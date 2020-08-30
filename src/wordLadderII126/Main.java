@@ -13,7 +13,7 @@ public class Main {
         String[] wordList_1 = {"hot","dot","dog","lot","log","cog"};
         int        expect_1 = 2;
 
-        AssertUtils.assertEqualsInteger(expect_1,
+        AssertUtils.assertEquals(expect_1,
                 solution.findLadders(beginWord_1,
                                        endWord_1,
                         Arrays.asList(wordList_1)).size());
@@ -23,7 +23,7 @@ public class Main {
         String[] wordList_2 = {"a","b","c"};
         int        expect_2 = 1;
 
-        AssertUtils.assertEqualsInteger(expect_2,
+        AssertUtils.assertEquals(expect_2,
                 solution.findLadders(beginWord_2,
                                        endWord_2,
                         Arrays.asList(wordList_2)).size());

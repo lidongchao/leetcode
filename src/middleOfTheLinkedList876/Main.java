@@ -9,11 +9,11 @@ public class Main {
 
         int[] arr_1 = {1,2,3,4,5};
         int expect_1 = 3;
-        AssertUtils.assertEqualsInteger(expect_1, solution.middleNode(generateList(arr_1)).val);
+        AssertUtils.assertEquals(expect_1, solution.middleNode(generateList(arr_1)).val);
 
         int[] arr_2 = {1,2,3,4,5,6};
         int expect_2 = 4;
-        AssertUtils.assertEqualsInteger(expect_2, solution.middleNode(generateList(arr_2)).val);
+        AssertUtils.assertEquals(expect_2, solution.middleNode(generateList(arr_2)).val);
 
     }
 

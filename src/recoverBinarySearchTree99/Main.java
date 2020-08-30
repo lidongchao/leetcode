@@ -4,9 +4,6 @@ import utils.AssertUtils;
 import utils.TreeNode;
 import utils.TreeUtils;
 
-import java.sql.Timestamp;
-import java.time.LocalDate;
-
 public class Main {
     public static void main(String[] args) {
         test(new Integer[]{3, 1, 4, null, null, 2});
@@ -23,6 +20,6 @@ public class Main {
         solution2.recoverTree(root1);
         solution3.recoverTree(root2);
 
-        AssertUtils.assertEqualsString(root1.toString(), root2.toString());
+        AssertUtils.assertEquals(root1.toString(), root2.toString());
     }
 }

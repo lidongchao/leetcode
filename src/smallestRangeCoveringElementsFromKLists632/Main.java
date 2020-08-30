@@ -25,7 +25,7 @@ public class Main {
             long midTime = System.currentTimeMillis();
             int[] actual = solution.smallestRange(nums);
             long endTime = System.currentTimeMillis();
-            AssertUtils.assertEqualsIntArray(expect, actual);
+            AssertUtils.assertEqualsArray(expect, actual);
             System.out.println("Time of expect: " + (midTime - startTime) + ". Time of actual: " + (endTime - midTime));
         }
 

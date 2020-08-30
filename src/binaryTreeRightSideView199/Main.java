@@ -12,7 +12,7 @@ public class Main {
         Integer[] tree = {1,2,3,null,5,null,4};
         TreeNode root = TreeUtils.construct(tree);
         int[] expect = {1,3,4};
-        AssertUtils.assertEqualsIntArray(expect, ArrayUtils.toPrimitive(solution.rightSideView(root).toArray(new Integer[0])));
+        AssertUtils.assertEqualsArray(expect, ArrayUtils.objectToPrimitive(solution.rightSideView(root).toArray(new Integer[0])));
 
     }
 }

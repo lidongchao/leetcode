@@ -10,7 +10,7 @@ public class Main {
         for (int i = 0; i < 100; i++) {
             int[] A = GeneratorUtils.generateRandomArray(1, 20, 1, 100);
             if (A.length < 2) continue;
-            AssertUtils.assertEqualsInteger(solution1.maxScoreSightseeingPair(A), solution2.maxScoreSightseeingPair(A));
+            AssertUtils.assertEquals(solution1.maxScoreSightseeingPair(A), solution2.maxScoreSightseeingPair(A));
         }
 
     }

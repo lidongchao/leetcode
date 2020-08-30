@@ -14,7 +14,7 @@ public class Main {
                 {0,0,0},
                 {0,1,0},
                 {0,0,0}};
-        AssertUtils.assertEqualsInt2DArray(expect_1, solution.updateMatrix(matrix_1));
+        AssertUtils.assertEquals2DArray(expect_1, solution.updateMatrix(matrix_1));
 
         int[][] matrix_2 = {
                 {0,0,0},
@@ -24,7 +24,7 @@ public class Main {
                 {0,0,0},
                 {0,1,0},
                 {1,2,1}};
-        AssertUtils.assertEqualsInt2DArray(expect_2, solution.updateMatrix(matrix_2));
+        AssertUtils.assertEquals2DArray(expect_2, solution.updateMatrix(matrix_2));
 
 
 

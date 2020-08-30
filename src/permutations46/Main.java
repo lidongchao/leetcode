@@ -8,6 +8,6 @@ public class Main {
 
         int[] nums_1 = {1,2,3};
         int expect_1 = 6;
-        AssertUtils.assertEqualsInteger(expect_1, solution.permute(nums_1).size());
+        AssertUtils.assertEquals(expect_1, solution.permute(nums_1).size());
     }
 }

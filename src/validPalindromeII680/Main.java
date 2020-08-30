@@ -8,11 +8,11 @@ public class Main {
 
         String s_1 = "aba";
         boolean expect_1 = true;
-        AssertUtils.assertEqualsBoolean(expect_1, solution.validPalindrome(s_1));
+        AssertUtils.assertEquals(expect_1, solution.validPalindrome(s_1));
 
         String s_2 = "abca";
         boolean expect_2 = true;
-        AssertUtils.assertEqualsBoolean(expect_2, solution.validPalindrome(s_2));
+        AssertUtils.assertEquals(expect_2, solution.validPalindrome(s_2));
 
 
     }

@@ -2,6 +2,7 @@ package utils;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.List;
 
 public final class AssertUtils {
     private AssertUtils() {}
@@ -15,19 +16,7 @@ public final class AssertUtils {
 
     /****************** basic ******************/
 
-    public static boolean assertEqualsString(String expect, String actual) {
-        return assertEquals(expect, actual);
-    }
-
-    public static boolean assertEqualsInteger(Integer expect, Integer actual) {
-        return assertEquals(expect, actual);
-    }
-
-    public static boolean assertEqualsBoolean(Boolean expect, Boolean actual) {
-        return assertEquals(expect, actual);
-    }
-
-    public static boolean assertEqualsDouble(Double expect, Double actual) {
+    public static boolean assertEquals(Double expect, Double actual) {
         if (expect - actual < Double.MIN_VALUE) {
             if (!mute) {
                 System.out.println(PASS);
@@ -53,59 +42,77 @@ public final class AssertUtils {
         }
     }
 
-    /****************** array ******************/
+    /****************** list ******************/
 
-    public static boolean assertEqualsStringArray(String[] expect, String[] actual) {
-        return assertEqualsArray(expect, actual);
-    }
+    public static <T> boolean assertEqualsList(List<T> expect, List<T> actual) {
+        boolean equals = true;
+        if (expect == null && actual == null) {
+            equals = true;
+        } else if (expect == null || actual == null) {
+            equals = false;
+        } else if (expect.size() != actual.size()) {
+            equals = false;
+        } else {
+            equals = expect.equals(actual);
+        }
 
-    public static boolean assertEqualsIntegerArray(Integer[] expect, Integer[] actual) {
-        return assertEqualsArray(expect, actual);
-    }
-
-    public static boolean assertEqualsIntArray(int[] expect, int[] actual) {
-        return assertEqualsArray(ArrayUtils.toObject(expect), ArrayUtils.toObject(actual));
-    }
-
-    public static boolean assertEqualsIntArrayIgnorePosition(int[] expect, int[] actual) {
-        return assertEqualsArrayIgnorePosition(ArrayUtils.toObject(expect), ArrayUtils.toObject(actual));
-    }
-
-    public static boolean assertEqualsDoubleArray(Double[] expect, Double[] actual) {
-        return assertEqualsArray(expect, actual);
-    }
-
-    public static boolean assertEqualsDoubleArray(double[] expect, double[] actual) {
-        return assertEqualsArray(ArrayUtils.toObject(expect), ArrayUtils.toObject(actual));
-    }
-
-    public static boolean assertEqualsArray(Object[] expect, Object[] actual) {
-        if (Arrays.equals(expect, actual)) {
+        if (equals) {
             if (!mute) {
                 System.out.println(PASS);
             }
-            return true;
         } else {
-            printlnExpect(Arrays.toString(expect));
-            printlnActual(Arrays.toString(actual));
-            return false;
+            printlnExpect(expect, true);
+            printlnActual(actual, true);
         }
+        return equals;
     }
 
-    public static boolean assertEqualsArrayIgnorePosition(Object[] expect, Object[] actual) {
+    /****************** array ******************/
+
+    public static boolean assertEqualsArray(int[] expect, int[] actual) {
+        return assertEqualsArray(ArrayUtils.primitiveToObject(expect), ArrayUtils.primitiveToObject(actual));
+    }
+
+    public static boolean assertEqualsArray(double[] expect, double[] actual) {
+        return assertEqualsArray(ArrayUtils.primitiveToObject(expect), ArrayUtils.primitiveToObject(actual));
+    }
+
+    public static <T> boolean assertEqualsArray(T[] expect, T[] actual) {
+        return assertEqualsList(ArrayUtils.arrayToList(expect), ArrayUtils.arrayToList(actual));
+    }
+
+    public static boolean assertEqualsArrayIgnorePosition(int[] expect, int[] actual) {
+        return assertEqualsArrayIgnorePosition(ArrayUtils.primitiveToObject(expect), ArrayUtils.primitiveToObject(actual));
+    }
+
+    public static <T> boolean assertEqualsArrayIgnorePosition(T[] expect, T[] actual) {
         Arrays.sort(expect);
         Arrays.sort(actual);
         return assertEqualsArray(expect, actual);
     }
 
-    /****************** 2d array ******************/
-
-    public static boolean assertEqualsInt2DArray(int[][] expect, int[][] actual) {
-        return assertEquals2DArray(ArrayUtils.to2DObject(expect), ArrayUtils.to2DObject(actual));
+    public static boolean assertEqualsArrayAnyCase(int[][] expect, int[] actual) {
+        return assertEqualsArrayAnyCase(ArrayUtils.primitiveTo2DObject(expect), ArrayUtils.primitiveToObject(actual));
     }
 
-    public static boolean assertEqualsIntArrayAnyCase(int[][] expect, int[] actual) {
-        return assertEqualsArrayAnyCase(ArrayUtils.to2DObject(expect), ArrayUtils.toObject(actual));
+    public static boolean assertEqualsArrayAnyCase(Object[][] expect, Object[] actual) {
+        for (Object[] e: expect) {
+            if (Arrays.equals(e, actual)) {
+                if (!mute) {
+                    System.out.println(PASS);
+                }
+                return true;
+            }
+        }
+        printlnExpect(ArrayUtils.toString2DArray(expect));
+        printlnActual(Arrays.toString(actual));
+        return false;
+    }
+
+    /****************** 2d array ******************/
+
+    public static boolean assertEquals2DArray(int[][] expect, int[][] actual) {
+        return assertEquals2DArray(ArrayUtils.primitiveTo2DObject(expect), ArrayUtils.primitiveTo2DObject(actual));
     }
 
     @SuppressWarnings("rawtypes")
@@ -151,20 +158,6 @@ public final class AssertUtils {
             printlnActual(ArrayUtils.toString2DArray(actual), true);
             return false;
         }
-    }
-
-    public static boolean assertEqualsArrayAnyCase(Object[][] expect, Object[] actual) {
-        for (Object[] e: expect) {
-            if (Arrays.equals(e, actual)) {
-                if (!mute) {
-                    System.out.println(PASS);
-                }
-                return true;
-            }
-        }
-        printlnExpect(ArrayUtils.toString2DArray(expect));
-        printlnActual(Arrays.toString(actual));
-        return false;
     }
 
     /****************** print ******************/

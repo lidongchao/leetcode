@@ -15,7 +15,7 @@ public class Main {
             if (nums.length == 0) continue;
             int[] nums2 = Arrays.copyOf(nums, nums.length);
             int k = (int) (Math.random() * nums.length) + 1;
-            AssertUtils.assertEqualsInteger(solution1.findKthLargest(nums, k), solution2.findKthLargest(nums2, k));
+            AssertUtils.assertEquals(solution1.findKthLargest(nums, k), solution2.findKthLargest(nums2, k));
         }
 
 

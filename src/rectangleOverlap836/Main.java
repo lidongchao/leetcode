@@ -9,11 +9,11 @@ public class Main {
         int[] rec1_1 = {0,0,2,2};
         int[] rec2_1 = {1,1,3,3};
         boolean expect_1 = true;
-        AssertUtils.assertEqualsBoolean(expect_1, solution.isRectangleOverlap(rec1_1, rec2_1));
+        AssertUtils.assertEquals(expect_1, solution.isRectangleOverlap(rec1_1, rec2_1));
 
         int[] rec1_2 = {0,0,1,1};
         int[] rec2_2 = {1,0,2,1};
         boolean expect_2 = false;
-        AssertUtils.assertEqualsBoolean(expect_2, solution.isRectangleOverlap(rec1_2, rec2_2));
+        AssertUtils.assertEquals(expect_2, solution.isRectangleOverlap(rec1_2, rec2_2));
     }
 }

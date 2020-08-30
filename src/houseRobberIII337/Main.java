@@ -12,13 +12,13 @@ public class Main {
             Solution1 solution1 = new Solution1();
             Solution2 solution2 = new Solution2();
             Solution3 solution3 = new Solution3();
-            TreeNode tree = GeneratorUtils.generateTree(10, 80, 0, 10);
+            TreeNode tree = GeneratorUtils.generateRandomTree(10, 80, 0, 10);
 
 //            if (!AssertUtils.assertEqualsInteger(solution1.rob(tree), solution2.rob(tree))) {
 //                assert tree != null;
 //                System.out.println(tree.serialize());
 //            }
-            if (!AssertUtils.assertEqualsInteger(solution2.rob(tree), solution3.rob(tree))) {
+            if (!AssertUtils.assertEquals(solution2.rob(tree), solution3.rob(tree))) {
                 assert tree != null;
                 System.out.println(tree.serialize());
             }

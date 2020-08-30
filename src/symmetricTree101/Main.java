@@ -8,6 +8,6 @@ public class Main {
         Solution1 solution = new Solution1();
 
         Integer[] nodes = {1,2,2,3,4,4,3};
-        AssertUtils.assertEqualsBoolean(true, solution.isSymmetric(TreeUtils.construct(nodes)));
+        AssertUtils.assertEquals(true, solution.isSymmetric(TreeUtils.construct(nodes)));
     }
 }

@@ -22,7 +22,7 @@ public class Main {
         String  s2_2 = "abacab";
         int     n2_2 = 1;
         int expect_2 = 0;
-        AssertUtils.assertEqualsInteger(expect_2,
+        AssertUtils.assertEquals(expect_2,
                 solution.getMaxRepetitions( s1_2,
                                             n1_2,
                                             s2_2,

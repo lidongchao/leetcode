@@ -8,6 +8,6 @@ public class Main {
 
         String s_1 = "abccccdd";
         int expect_1 = 7;  // len("dccaccd") = 7
-        AssertUtils.assertEqualsInteger(expect_1, solution.longestPalindrome(s_1));
+        AssertUtils.assertEquals(expect_1, solution.longestPalindrome(s_1));
     }
 }

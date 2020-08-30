@@ -9,7 +9,7 @@ public class Main {
         int[][] image = {{1,1,1},{1,1,0},{1,0,1}};
         int sr = 1, sc = 1, newColor = 2;
         int[][] expect = {{2,2,2},{2,2,0},{2,0,1}};
-        AssertUtils.assertEqualsInt2DArray(expect, solution.floodFill(image, sr, sc, newColor));
+        AssertUtils.assertEquals2DArray(expect, solution.floodFill(image, sr, sc, newColor));
 
     }
 }

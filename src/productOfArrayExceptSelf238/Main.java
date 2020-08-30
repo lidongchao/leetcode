@@ -8,6 +8,6 @@ public class Main {
 
         int[] nums_1 = {1,2,3,4};
         int[] expect_1 = {24,12,8,6};
-        AssertUtils.assertEqualsIntArray(expect_1, solution.productExceptSelf(nums_1));
+        AssertUtils.assertEqualsArray(expect_1, solution.productExceptSelf(nums_1));
     }
 }

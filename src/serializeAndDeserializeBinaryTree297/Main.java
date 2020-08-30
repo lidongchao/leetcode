@@ -15,7 +15,7 @@ public class Main {
 
         TreeNode root2 = codec.deserialize(codec.serialize(root));
 
-        AssertUtils.assertEqualsString(root.toString(), root2.toString());
+        AssertUtils.assertEquals(root.toString(), root2.toString());
 
     }
 }

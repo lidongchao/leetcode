@@ -8,11 +8,11 @@ public class Main {
 
         int[] nums_1 = {4,1,4,6};
         int[] expect_1 = {1,6};
-        AssertUtils.assertEqualsIntArrayIgnorePosition(expect_1, solution.singleNumbers(nums_1));
+        AssertUtils.assertEqualsArrayIgnorePosition(expect_1, solution.singleNumbers(nums_1));
 
         int[] nums_2 = {1,2,10,4,1,4,3,3};
         int[] expect_2 = {2, 10};
-        AssertUtils.assertEqualsIntArrayIgnorePosition(expect_2, solution.singleNumbers(nums_2));
+        AssertUtils.assertEqualsArrayIgnorePosition(expect_2, solution.singleNumbers(nums_2));
 
     }
 }

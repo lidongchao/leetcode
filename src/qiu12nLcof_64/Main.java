@@ -8,11 +8,11 @@ public class Main {
 
         int n_1 = 3;
         int expect_1 = 6;
-        AssertUtils.assertEqualsInteger(expect_1, solution.sumNums(n_1));
+        AssertUtils.assertEquals(expect_1, solution.sumNums(n_1));
 
         int n_2 = 9;
         int expect_2 = 45;
-        AssertUtils.assertEqualsInteger(expect_2, solution.sumNums(n_2));
+        AssertUtils.assertEquals(expect_2, solution.sumNums(n_2));
 
     }
 }

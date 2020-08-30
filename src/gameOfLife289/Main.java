@@ -9,7 +9,7 @@ public class Main {
         int[][] board_1 = {{0,1,0}, {0,0,1}, {1,1,1}, {0,0,0}};
         int[][] expect_1 = {{0,0,0}, {1,0,1}, {0,1,1}, {0,1,0}};
         solution.gameOfLife(board_1);
-        AssertUtils.assertEqualsInt2DArray(expect_1, board_1);
+        AssertUtils.assertEquals2DArray(expect_1, board_1);
 
     }
 }

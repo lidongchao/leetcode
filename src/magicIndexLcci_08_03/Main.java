@@ -16,7 +16,7 @@ public class Main {
 
             int magicIndex1 = solution1.findMagicIndex(arr);
             int magicIndex2 = solution2.findMagicIndex(arr);
-            AssertUtils.assertEqualsInteger(magicIndex1, magicIndex2);
+            AssertUtils.assertEquals(magicIndex1, magicIndex2);
         }
     }
 }

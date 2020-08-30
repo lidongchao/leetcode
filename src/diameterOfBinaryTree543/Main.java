@@ -13,7 +13,7 @@ public class Main {
         root_1.left.left = new TreeNode(4);
         root_1.left.right = new TreeNode(5);
         int expect_1 = 3;
-        AssertUtils.assertEqualsInteger(expect_1, solution.diameterOfBinaryTree(root_1));
+        AssertUtils.assertEquals(expect_1, solution.diameterOfBinaryTree(root_1));
 
     }
 }

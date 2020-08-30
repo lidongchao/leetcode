@@ -10,7 +10,7 @@ public class Main {
         String[] operators_1 = {"MinStack","push","push","push","getMin","pop","top","getMin"};
         int[][] operands_1 = {{},{-2},{0},{-3},{},{},{},{}};
         Integer[] expect_1 = {null, null, null, null, -3, null, 0, -2};
-        AssertUtils.assertEqualsIntegerArray(expect_1, operateStack(operators_1, operands_1));
+        AssertUtils.assertEqualsArray(expect_1, operateStack(operators_1, operands_1));
 
 
     }
